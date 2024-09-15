@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      body{
+        background-color: rgb(51, 48, 48);
+        color: white;
+      }
+      #parent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #child {
+        text-align: center;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <div id="child">
+        <h2>Counter Game</h2>
+        <button id="inc">Increment</button>
+        <button id="dec">Decrement</button>
+        <h2 id="value">0</h2>
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+    <script>
+      let counter = 0;
+      let inc = document.getElementById("inc");
+      let dec = document.getElementById("dec");
+      let Reset = document.getElementById("reset");
+      let Value = document.getElementById("value");
+
+      inc.addEventListener("click", () => {
+        counter = counter + 1;
+        Value.innerHTML = counter;
+      });
+      dec.addEventListener("click", () => {
+        counter = counter - 1;
+        Value.innerHTML = counter;
+      });
+      Reset.addEventListener("click", () => {
+        counter = 0;
+        Value.innerHTML = counter;
+      });
+    </script>
+  </body>
+</html>
